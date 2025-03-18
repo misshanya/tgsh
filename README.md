@@ -9,20 +9,28 @@ Telegram bot that provides access to the shell.
 - Go 1.24
 
 ## How to use
-1. Clone repo and go to it
+#### 1. Clone repo and go to it
 ```shell
 git clone https://github.com/misshanya/tgsh
 cd tgsh
 ```
-2. Create Telegram bot in BotFather
-3. Fill .env file:
+
+#### 2. Create Telegram bot in BotFather
+
+#### 3. Fill .env file:
 ```
 BOT_TOKEN=token-of-your-bot
 ALLOWED_USER=id-of-your-account
 ```
 ALLOWED_USER is id of your Telegram account which can be obtained via other bots or Telegram clients
-4. Build the bot and run it
+
+#### 4. Build the bot and run it
 ```shell
 go build -o bot .
 ./bot
 ```
+
+#### 5. Start using :)
+/start - greeting and some info
+
+any other text implements as a shell command and executes on your system

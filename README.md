@@ -5,6 +5,9 @@ Telegram bot that provides access to the shell.
 > [!WARNING]
 > You must not use this for fraudulent purposes. All responsibility when using TGSH rests solely with you
 
+## Why I made it?
+I often need to access my home computer (which runs Linux, by the way) when I'm away. Since I don't have a public IP at home, setting up SSH under these conditions is tricky. So, I decided to create this project. Hopefully, someone else will find it useful too.
+
 ## Prerequirements
 - Go 1.24
 

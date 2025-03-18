@@ -20,7 +20,7 @@ func (s *service) ExecuteCommand(ctx context.Context, command string) (string, e
 	cmd := exec.CommandContext(ctx, "sh", "-c", command)
 	out, err := cmd.CombinedOutput()
 	if err != nil {
-		slog.Error("Error executing\ncommand", command, "\nerror", err, "\noutput", string(out))
+		slog.Error("Error executing command", slog.String("command", command), slog.Any("error", err), slog.String("output", string(out)))
 		return "", err
 	}
 	return string(out), nil

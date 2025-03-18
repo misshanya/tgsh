@@ -27,7 +27,7 @@ func (h *Handler) StartHandler(ctx context.Context, b *bot.Bot, update *models.U
 		Text:   "Hi! This is TGSH. Tool that provides you easier access to your system's shell.",
 	})
 	if err != nil {
-		slog.Error("Error sending message", update.Message.Chat.ID, err)
+		slog.Error("Error sending message", slog.Int64("id", update.Message.Chat.ID), slog.Any("error", err))
 		return
 	}
 }
@@ -39,7 +39,7 @@ func (h *Handler) DefaultHandler(ctx context.Context, b *bot.Bot, update *models
 			Text:   "You are not allowed to use this command.",
 		})
 		if err != nil {
-			slog.Error("Error sending message", update.Message.Chat.ID, err)
+			slog.Error("Error sending message", slog.Int64("id", update.Message.Chat.ID), slog.Any("error", err))
 		}
 		return
 	}
@@ -50,7 +50,7 @@ func (h *Handler) DefaultHandler(ctx context.Context, b *bot.Bot, update *models
 			Text:   fmt.Sprintf("[!] Error: %s", err.Error()),
 		})
 		if err != nil {
-			slog.Error("Error sending message", update.Message.Chat.ID, err)
+			slog.Error("Error sending message", slog.Int64("id", update.Message.Chat.ID), slog.Any("error", err))
 		}
 		return
 	}
@@ -59,6 +59,6 @@ func (h *Handler) DefaultHandler(ctx context.Context, b *bot.Bot, update *models
 		Text:   out,
 	})
 	if err != nil {
-		slog.Error("Error sending message", update.Message.Chat.ID, err)
+		slog.Error("Error sending message", slog.Int64("id", update.Message.Chat.ID), slog.Any("error", err))
 	}
 }
